@@ -1,7 +1,4 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { registerImage } from "./lazy";
 
 //  https://gersonlazaro.com/unsplash-api-miles-de-fotos-gratis-en-tu-sitio-web-o-aplicacion/
 
@@ -9,7 +6,6 @@ const mountNode = document.getElementById('images');
 const addButton = document.querySelector('.add-button');
 
 const unsplashApi = 'https://source.unsplash.com/random/';
-console.log(unsplashApi)
 
 const maximum = 100000;
 const minimum = 1;
@@ -31,6 +27,7 @@ const createImageNode = () => {
 const addImage = () => {
     const newImage = createImageNode();
     mountNode.append(newImage);
+    registerImage(newImage);
 }
 
 addButton.addEventListener('click', addImage);
