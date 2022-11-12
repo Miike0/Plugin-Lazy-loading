@@ -18,7 +18,7 @@ const createImageNode = () => {
     const image = document.createElement('img');
     image.className = 'max-auto';
     image.width = '320';
-    image.src = `${unsplashApi}${random()}`;
+    image.dataset.src = `${unsplashApi}${random()}`;
 
     imageContainer.appendChild(image);
     return imageContainer;
