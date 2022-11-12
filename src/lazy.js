@@ -11,6 +11,7 @@ const loadImage = (entry) => {
     observer.unobserve(container);
 };
 
+
 const observer = new IntersectionObserver((entries) => {
     entries.filter(isIntersecting).forEach (loadImage);
 });

@@ -1,15 +1,17 @@
-import { registerImage } from "./lazy";
+import { registerImage} from "./lazy";
 
 //  https://gersonlazaro.com/unsplash-api-miles-de-fotos-gratis-en-tu-sitio-web-o-aplicacion/
 
 const mountNode = document.getElementById('images');
 const addButton = document.querySelector('.add-button');
+const clearButton = document.querySelector('.clear-button');
 
 const unsplashApi = 'https://source.unsplash.com/random/';
 
 const maximum = 100000;
 const minimum = 1;
 const random = () => Math.floor (Math.random() * (maximum - minimum)) + minimum;
+
 
 const createImageNode = () => {
     const imageContainer = document.createElement('div');
@@ -31,3 +33,7 @@ const addImage = () => {
 }
 
 addButton.addEventListener('click', addImage);
+
+clearButton.addEventListener('click', () => {
+    mountNode.innerHTML = '';
+});
